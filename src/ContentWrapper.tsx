@@ -15,7 +15,7 @@ export function ContentWrapper({ count }: { count: number }) {
   });
   const itemData = useAtomValue(itemDataAtom);
   const reduxData = useSelector((state: RootState) => state.globalData.data);
-  console.log("wat", data, itemData);
+  console.log("wat", data, itemData, reduxData);
 
   return (
     <div>
