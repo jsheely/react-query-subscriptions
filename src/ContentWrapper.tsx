@@ -2,6 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useAtomValue } from "jotai";
 import { itemDataAtom } from "./data";
 import { ContentItem } from "./ContentItem";
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
 
 export function ContentWrapper({ count }: { count: number }) {
   const { data } = useQuery({
@@ -12,6 +14,7 @@ export function ContentWrapper({ count }: { count: number }) {
       ),
   });
   const itemData = useAtomValue(itemDataAtom);
+  const reduxData = useSelector((state: RootState) => state.globalData.data);
   console.log("wat", data, itemData);
 
   return (
@@ -19,6 +22,7 @@ export function ContentWrapper({ count }: { count: number }) {
       <ul>
         <li>RQ: {JSON.stringify(data)}</li>
         <li>JA: {JSON.stringify(itemData)}</li>
+        <li>RT: {JSON.stringify(reduxData)}</li>
         <li>
           CI: <ContentItem />{" "}
         </li>
