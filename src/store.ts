@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { globalData } from './redux.state'
+import { secondaryState } from './secondary.state'
 
 export const store = configureStore({
   reducer: {
     globalData: globalData.reducer,
+    secondaryState: secondaryState.reducer,
   },
 })
 

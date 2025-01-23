@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface GlobalState {
+export interface SecondaryState {
     value: number
 }
 
@@ -10,8 +10,8 @@ const initialState: { data: any } = {
     data: {}
 }
 
-export const globalData = createSlice({
-    name: 'globalData',
+export const secondaryState = createSlice({
+    name: 'secondaryState',
     initialState,
     reducers: {
         update: (state, action: PayloadAction<number>) => {
@@ -21,6 +21,6 @@ export const globalData = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { update } = globalData.actions
+export const { update } = secondaryState.actions
 
-export default globalData.reducer
+export default secondaryState.reducer

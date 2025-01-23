@@ -15,7 +15,8 @@ export function ContentWrapper({ count }: { count: number }) {
   });
   const itemData = useAtomValue(itemDataAtom);
   const reduxData = useSelector((state: RootState) => state.globalData.data);
-  console.log("wat", data, itemData, reduxData);
+  const secondaryData = useSelector((state: RootState) => state.secondaryState.data);
+  console.log("wat", data, itemData, reduxData, secondaryData);
 
   return (
     <div>
@@ -23,6 +24,7 @@ export function ContentWrapper({ count }: { count: number }) {
         <li>RQ: {JSON.stringify(data)}</li>
         <li>JA: {JSON.stringify(itemData)}</li>
         <li>RT: {JSON.stringify(reduxData)}</li>
+        <li>ST: {JSON.stringify(secondaryData)}</li>
         <li>
           CI: <ContentItem />{" "}
         </li>
